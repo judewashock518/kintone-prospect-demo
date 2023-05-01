@@ -29,17 +29,17 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
       // Retrieve & configure the space element below the record list's header
       const spaceDiv = kintone.app.getHeaderSpaceElement();
-      spaceDiv.style.height = '650px';
+      spaceDiv.style.height = '930px';
       spaceDiv.style.marginLeft = '25px';
       spaceDiv.style.marginRight = '25px';
       spaceDiv.style.border = 'solid';
-      spaceDiv.style.borderColor = '#ED7B84';
+      spaceDiv.style.borderColor = '#DF542F';
 
       // Automatically enable all amCharts animations
       am4core.useTheme(am4themes_animated);
 
       // Create chart instance
-      var chart = am4core.create("chartdiv", am4charts.SlicedChart);
+      const chart = am4core.create(spaceDiv, am4charts.SlicedChart);
       chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
 
       // Input Kintone data into the chart
@@ -54,7 +54,7 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
       console.log('chart.data');
       console.log(chart.data);
 
-      let series = chart.series.push(new am4charts.FunnelSeries());
+      const series = chart.series.push(new am4charts.FunnelSeries());
       series.colors.step = 2;
       series.dataFields.value = "value";
       series.dataFields.category = "name";

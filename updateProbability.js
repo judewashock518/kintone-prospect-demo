@@ -5,7 +5,7 @@
       let orderStage = record.order_stage.value;
       let probabilityStage = Number(record.probability.value);
       let newProbability = null;
-      if (orderStage === 'Order Rejected') {
+      if (orderStage === 'Rejected') {
         newProbability = 0;
       } else if (orderStage === 'Not Started' || orderStage === 'In Queue' || orderStage === 'On Hold') {
         newProbability = 50;
